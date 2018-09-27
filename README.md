@@ -11,11 +11,15 @@
 
 The framework is not yet available on Racket's package server. To test it, you need to download the master branch and compile the documentation in 'scribblings/manual.scrbl' (e.g. by loading it and clicking Scribble HTML in DrRacket). You can install it manually using `raco`.
 
+## Usage
+
+Once the framework has been installed locally, `(require appy/gui)` will import all functionality. Importing by `(require "path/to/appy/gui")` should also work if you don't want to install it locally. If you only `(require appy)` the gui-related classes will not be imported.
+
 ## Features
 
 The main classes are `application%` and `gui-application%` for building command line and GUI applications respectively. *Appy*'s main features are:
 
-- Application metadata: The section on applications describes the two main application classes `application%` and `gui-application%` that deal with application name, localization, preferences, icons, exception handlers, and other issues. Once you have defined an instance of `gui-application%` or a subclass thereof, you can compile and package it automatically.
+- Application metadata: The two main application classes `application%` and `gui-application%` manage the application name(s), version, localization, preferences, icons, exception handlers, and other issues. Once you have defined an instance of `gui-application%` or a subclass thereof, you can compile and package it automatically.
 
 - Internationalization: An internationalization system allows you to associate English format strings with symbolic keys using the defloc macro, which defines translation functions and keys for the function `tr`. Localizations can be added at runtime and at compile-time. Templates can be created and there is support for checking the integrity and completeness of all translations before deployment.
 
@@ -29,4 +33,4 @@ The main classes are `application%` and `gui-application%` for building command 
 
 - Event-Subscriber System: The notifications system provides the means to implement the notify-subscriber pattern for easy communication between distant system components. Depending on how you use it, this may be a curse or blessing, but it greatly simplifies implementing the model-view-controller GUI pattern. Check out the Notes example for a use of this module.
 
-- Easy Deployment: The deploy function of the deployment allows you to easily compile and package an application once it has been set up. It expects an instance of `application%` or `gui-application%`, from which `(deploy)` pulls all the necessary meta-information to compile the application and create a packed standalone distribution file. Pre and post compilation scripts can be provided to e.g. upload the distribution to a server.
+- Easy Deployment: A `deploy` function allows you to easily compile and package an application once it has been set up. It expects an instance of `application%` or `gui-application%`, from which `(deploy)` pulls all the necessary meta-information to compile the application and create a packed standalone distribution file. Pre and post compilation scripts can be provided to e.g. upload the distribution to a server.
