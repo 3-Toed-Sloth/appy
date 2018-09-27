@@ -1,0 +1,4 @@
+(test1 "fr test 1")
+(test2 "fr test 2: ~a")
+(test3 "fr test 3: ~a ~s")
+(test4 "fr la lune")

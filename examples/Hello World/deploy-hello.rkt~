@@ -1,0 +1,9 @@
+#lang racket
+(require "../deploy.rkt"
+         "hello.rkt")
+
+(define (deploy-now)
+  (deploy "bin" "hello-run.rkt"))
+
+(module+ main
+  (deploy-now))

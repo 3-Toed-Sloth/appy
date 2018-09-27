@@ -1,0 +1,4 @@
+(test1 "de test 1")
+(test2 "de test 2: ~a")
+(test3 "de test 3: ~a ~s")
+(test4 "de der Mond")

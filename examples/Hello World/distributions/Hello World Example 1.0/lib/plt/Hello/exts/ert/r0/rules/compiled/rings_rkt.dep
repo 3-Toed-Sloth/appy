@@ -1,0 +1,1 @@
+("7.0" ("9cb7954d69153338ae288df108474c7276ab69cc" . "fcb0534e2d2b544e49ed35314a6e62b17e3cdd85") (collects #"2htdp" #"image.rkt") (collects #"identikon" #"utils.rkt") (collects #"racket" #"base.rkt") (collects #"racket" #"list.rkt") (collects #"racket" #"runtime-config.rkt"))

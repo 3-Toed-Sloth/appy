@@ -1,0 +1,37 @@
+;; APPY Language Template for US English
+;; This file is auto-generated, do not change its contents! The command (init-language-system) overwrites this file.
+;; Use define-localizations followed by init-language-system for defining en_US file that serves as a basis.
+;; Use (check-translations) before deployment to check the completeness of your translation files.
+;; Use (write-translation-template lang) to create a template for language lang, abbreviated by symbols as above.
+
+(appy-undo-manager-closed "The undo manager is closed. Use open-undo-system to initialize it.")
+(appy-open-db-twice "~a attempted to open a database twice.")
+(appy-Continue "Continue")
+(appy-Info "Info")
+(appy-command-numeric-twice "A command numeric id was registered twice - race condition? You may not use make-command concurrently. Command numeric=~s")
+(appy-routine-maintenance-message "~a is undergoing routine maintenance. Please do not interrupt this process.")
+(appy-maintenance-ended "Maintenance for ~a has ended: ~a")
+(appy-Maintenance "Maintenance")
+(appy-save-and-quit-message "~a\n\nYou should Save & Quit now or may continue at your own risk.")
+(appy-undo-manager-already-open "The undo manager is already open.")
+(appy-use-closed-db "~a attempted to use a closed database.")
+(appy-Application "Application")
+(appy-err-event "[~a] ~a: ~a event number ~a has occurred. Please check the manual for more information. [~a ~a]")
+(appy-about-title "About ~a")
+(appy-start-clean-preferences "Starting to clean up preferences.")
+(appy-end-clean-preferences "Done cleaning up preferences.")
+(appy-undo-version-err "An attempt to undo a command from a higher version of the undo manager has failed. Please update the application to the latest version to undo this action. Command numeric=~s")
+(appy-unknown-error "Unknown Error")
+(appy-close-db-twice "~a attempted to close a database twice.")
+(appy-Error "Error")
+(appy-Save-and-Quit "Save & Quit")
+(appy-command-empty-data-field "Empty data field for command. The undo database might be corrupted. Given: ~s")
+(appy-Debug "Debug")
+(appy-Fatal "Fatal")
+(appy-Warning "Warning")
+(appy-start-clean-undo "Starting to clean up the undo system.")
+(appy-command-target-not-found "Command target not found. The target link is stale. Given: ~s.")
+(appy-undo-empty-data "Empty data in undo manager. The undo database might be corrupted.")
+(appy-Module "Module")
+(appy-done-clean-undo "Done cleaning up the undo system.")
+(appy-maintenance-message "~a is doing maintenance: ~a")

@@ -1,0 +1,35 @@
+#lang racket
+
+(provide inform inform-verbosity inform-verbosity-quiet inform-verbosity-all with-info inform-level indent-string
+         inform-tab-spaces)
+
+(define inform-verbosity-quiet 0)
+(define inform-verbosity-all 7)
+
+(define inform-verbosity (make-parameter inform-verbosity-all))
+(define inform-level (make-parameter 0))
+(define inform-tab-spaces (make-parameter 2))
+
+(define (indent-string level #:tab-spaces [tab-spaces (inform-tab-spaces)])
+  (make-string (* (max (sub1 level) 0) tab-spaces) #\space))
+
+(define (inform msg
+                #:verbosity [verbosity inform-verbosity-all]
+                #:port [port (current-output-port)]
+                #:indent-level [indent-level (inform-level)] . args)
+  (unless (< (inform-verbosity) verbosity)
+    (display (indent-string indent-level) port)
+    (if (null? args)
+        (display msg  port)
+        (apply fprintf (cons port (cons msg args)))))
+  (flush-output port))
+
+(define-syntax with-info
+  (syntax-rules ()
+    ((with-info (msg args ...) body ... (msg2 args2 ...))
+     (parameterize ([inform-level (add1 (inform-level))])
+       (dynamic-wind
+        (lambda () (inform msg args ...))
+        (lambda () body ...)
+        (lambda () (inform msg2 args2 ...)))))))
+

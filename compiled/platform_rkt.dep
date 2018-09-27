@@ -1,0 +1,1 @@
+("7.0" ("595a8cf3ab11408ef351e3fbc881a81436fe55cc" . "258b5e358798c8bf6abcf8aaa1d3e6f0c11f58ca") (collects #"net" #"sendurl.rkt") (collects #"net" #"url.rkt") (collects #"racket" #"gui" #"base.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"path.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"rackunit" #"main.rkt"))

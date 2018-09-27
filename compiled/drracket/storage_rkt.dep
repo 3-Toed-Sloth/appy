@@ -1,0 +1,1 @@
+("7.0" ("3bc968f3d718cde7e3767f2d930a4ff0379293e6" . "1709064d756f534c0e9e22cc48b2133b52021c12") #"/home/nemo/git/racket/appy/appy/storage-interface.rkt" (collects #"db" #"main.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"rackunit" #"main.rkt") (collects #"srfi" #"13.rkt"))

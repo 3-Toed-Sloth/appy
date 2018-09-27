@@ -1,0 +1,136 @@
+;; This file is a template for language de_DE
+;; Translate all the strings from the comment above the entries to the value in the key value list below it
+;; Leave the key untouched.
+
+;; Translation for: "Notes"
+(loc:application-title "Notizen")
+
+;; Translation for: "~a attempted to open a database twice."
+(appy-open-db-twice "~a hat versucht, die Datenbank zweimal zu öffnen")
+
+;; Translation for: "Continue"
+(appy-Continue "Weiter")
+
+;; Translation for: "Starting to clean up preferences."
+(appy-start-clean-preferences "Voreinstellungen werden aufgeräumt.")
+
+;; Translation for: "Info"
+(appy-Info "Info")
+
+;; Translation for: "A command numeric id was registered twice - race condition? You may not use make-command concurrently. Command numeric=~s"
+(appy-command-numeric-twice "Eine numerische Befehlsidentität wurde zweimal registriert - Nebenläufigkeitsfehler? Make-command darf nicht nebenläufig verwendet werden. Numerischer Befehl=~s")
+
+;; Translation for: "~a is undergoing routine maintenance. Please do not interrupt this process."
+(appy-routine-maintenance-message "~a führt routinemäßige Wartungsarbeiten durch. Bitte unterbrechen Sie diesen Vorgang nicht.")
+
+;; Translation for: "Maintenance for ~a has ended: ~a"
+(appy-maintenance-ended "Die Wartung von ~a wurde beendet: ~a")
+
+;; Translation for: "Maintenance"
+(appy-Maintenance "Wartung")
+
+;; Translation for: "~a\n\nYou should Save & Quit now or may continue at your own risk."
+(appy-save-and-quit-message "Sie sollten Speichern & Beenden oder können auf eigenes Risiko weitermachen.")
+
+;; Translation for: "The undo manager is already open."
+(appy-undo-manager-already-open "Der Undo-Manager ist bereits geöffnet.")
+
+;; Translation for: "~a attempted to use a closed database."
+(appy-use-closed-db "~a hat versucht, eine geschlossene Datenbank zu verwenden.")
+
+;; Translation for: "Application"
+(appy-Application "Anwendung")
+
+;; Translation for: "[~a] ~a: ~a event number ~a has occurred. Please check the manual for more information. [~a ~a]"
+(appy-err-event "[~a] ~a: ~a Ereignis Nummer ~a has occurred. Bitte lesen Sie für zusätzliche Informationen die Bedienungsanleitung. [~a ~a]")
+
+;; Translation for: "Delete Note"
+(loc:button-delete "Notiz löschen")
+
+;; Translation for: "No note displayed."
+(loc:no-note-displayed "Keine Notiz angezeigt.")
+
+;; Translation for: "About ~a"
+(appy-about-title "Über ~a")
+
+;; Translation for: "Done cleaning up preferences."
+(appy-end-clean-preferences "Fertig mit dem Aufräumen der Voreinstellungen.")
+
+;; Translation for: "An attempt to undo a command from a higher version of the undo manager has failed. Please update the application to the latest version to undo this action. Command numeric=~s"
+(appy-undo-version-err "Es wurde versucht, den Undo-Manager einer höheren Version zu verwenden. Bitte verwenden Sie die neueste Version dieser Anwendung. Numerischer Befehl=~s")
+
+;; Translation for: "~a attempted to close a database twice."
+(appy-close-db-twice "~a hat versucht, eine Datenbank zweimal zu schließen.")
+
+;; Translation for: "Unknown Error"
+(appy-unknown-error "Unbekannter Fehler")
+
+;; Translation for: "Notes"
+(loc:notes "Notizen")
+
+;; Translation for: "Error"
+(appy-Error "Fehler")
+
+;; Translation for: "Save & Quit"
+(appy-Save-and-Quit "Speichern & Beenden")
+
+;; Translation for: "Warning"
+(appy-Warning "Warnung")
+
+;; Translation for: "Empty data field for command. The undo database might be corrupted. Given: ~s"
+(appy-command-empty-data-field "Leeres Datenfeld für den Befehl. Die Undo-Datenbank könnte beschädigt worden sein. Eingabe: ~s")
+
+;; Translation for: "Displaying note ~s."
+(loc:note-displayed "Zeige Notiz ~s an.")
+
+;; Translation for: "Tags: "
+(loc:tags-label "Stichwörter")
+
+;; Translation for: "Debug"
+(appy-Debug "Fehlersuche")
+
+;; Translation for: "Fatal"
+(appy-Fatal "Schwerer Fehler")
+
+;; Translation for: "Starting to clean up the undo system."
+(appy-start-clean-undo "Beginne mit dem Aufräumen der Undo-Datenbank.")
+
+;; Translation for: "Appy Notes.appynote"
+(loc:notes-file "Appy Notizen.appynote")
+
+;; Translation for: "~a is doing maintenance: ~a"
+(appy-maintenance-message "~a führt Wartungsarbeiten aus: ~a")
+
+;; Translation for: "Done cleaning up the undo system."
+(appy-done-clean-undo "Fertig mit dem Aufräumen der Undo-Datenbank.")
+
+;; Translation for: "Appy Notes Folder"
+(loc:notes-directory "Appy Notizen Ordner")
+
+;; Translation for: "Module"
+(appy-Module "Modul")
+
+;; Translation for: "Command target not found. The target link is stale. Given: ~s."
+(appy-command-target-not-found "Befehlsziel nicht gefunden. Die Verknüpfung könnte leer sein. Eingabe: ~s.")
+
+;; Translation for: "Empty data in undo manager. The undo database might be corrupted."
+(appy-undo-empty-data "Leere Daten im Undo-Manager. Die Undo-Datenbank könnte beschädigt worden sein.")
+
+;; Translation for: "Title: "
+(loc:title-label "Titel:")
+
+;; Translation for: "Selected Note"
+(loc:selected-note "Ausgewählte Notiz")
+
+;; Translation for: "New Note"
+(loc:button-new "Neue Notiz")
+
+;; Translation for: "The undo manager is closed. Use open-undo-system to initialize it."
+(appy-undo-manager-closed "Der Undo-Manager ist geschlossen. Verwenden sie open-undo-system, um ihn zu initialisieren.")
+
+;; Translation for: "New Note"
+(loc:new-note "Neue Notiz")
+
+;; Translation for: "List of Notes"
+(loc:all-notes "Liste der Notizen")
+

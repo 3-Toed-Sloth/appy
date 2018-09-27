@@ -1,0 +1,133 @@
+#lang racket
+(require racket/gui
+         (prefix-in gregor: gregor)
+         images/icons/misc
+         "../../gui.rkt")
+
+;; Localization strings need to be recorded here:
+(define-localizations
+  (loc:notes-file "My Notes.appynote")
+  (loc:application-title "Notes")
+  (loc:button-delete "Delete Note")
+  (loc:button-new "New Note")
+  (loc:title-label "Title: ")
+  (loc:tags-label "Tags: ")
+  (loc:notes "Notes")
+  (loc:all-notes "All Notes")
+  (loc:selected-note "Selected Note"))
+
+(init-language-system #:application-name "Notes")
+
+;; We define a model as a subclass of storage%. Directly basing the model on a database
+;; may not be desirable for larger applications but in this small example it will suffice.
+(define model%
+  (class storage%
+    (inherit set set-component delete-item new-item with-transaction)
+    
+    ;; The public API for our model:
+    (define/public (new-note title content richtext created modified tags)
+      (define note (new-item 'Notes))
+      (with-transaction
+          (lambda ()
+            (set 'Notes note 'Title title)
+            (set 'Notes note 'Content content)
+            (set 'Notes note 'RichText richtext)
+            (set 'Notes note 'Created (gregor:datetime->iso8601 (gregor:now/utc)))
+            (set 'Notes note 'Modified (gregor:datetime->iso8601 (gregor:now/utc)))
+            (set 'Notes note 'Tags tags)))
+      note)
+
+    (define/public (update-title note title)
+      (update note 'Title title))
+
+    (define/public (update-content note content)
+      (update note 'Content content))
+     
+    (define/public (update-tags note tags)
+      (update note 'Tags tags))
+
+    (define/public (delete-note note)
+      (delete-item 'Notes note))
+
+    (define/override (open)
+      (super open)
+      (set-component 'Notes '((Title text) (Content text) (RichText blob) (Created text) (Modified text) (Tags list-of text))))
+
+    ;; Private part
+    
+    (define (update note selector datum)
+      (with-transaction
+          (lambda ()
+            (set 'Notes note selector datum)
+            (set 'Notes note 'Modified  (gregor:datetime->iso8601 (gregor:now/utc))))))
+    
+    ;; It's just a 'single document application', so we initialize the storage class with a hard-coded path.
+    ;; Notice that the file name is translated.
+    (super-new
+     [file (build-path (find-system-path 'doc-dir) (loc:notes-file))])))
+
+(define the-model (make-parameter (make-object model%)))
+
+;; Next, we define the view which is responsible for displaying notes, the contents of a selected note,
+;; and allows for searching, deleting, and creating notes.
+(define view%
+  (class frame%
+    (inherit create-status-line)
+
+    (field (current-note #f))
+    
+    (define search #f)
+    (define noteslist #f)
+    (define title #f)
+    (define content #f)
+    (define tags #f)
+    (define new-button #f)
+    (define delete-button #f)
+
+    ;; Private part
+    (define (init-display)
+      (define vp0 (new vertical-panel% [parent this]))
+      (define hp3 (new horizontal-panel% [parent vp0][stretchable-height #f][alignment '(left bottom)]
+                       [horiz-margin 8]))
+      (set! delete-button (new button% [label (loc:button-delete)]
+                               [parent hp3] [callback (lambda (b evt) (notify 'delete this current-note))]))
+      (set! new-button (new button% [label (loc:button-new)]
+                            [parent hp3] [callback (lambda (b evt) (notify 'new-note this current-note))]))
+      (define hp1 (new horizontal-panel% [parent vp0] [vert-margin 8] [horiz-margin 8]))
+      (define gp1 (new group-box-panel% [parent hp1] [label (loc:all-notes)]))
+       (define vp1 (new vertical-panel% [parent gp1] [vert-margin 8][horiz-margin 8]))
+      (define hp2 (new horizontal-panel% [parent vp1][stretchable-height #f]))
+      (define gp2 (new group-box-panel% [parent hp1] [label (loc:selected-note)]))
+      (define vp2 (new vertical-panel% [parent gp2][vert-margin 8][horiz-margin 8]))
+      ;; left side of window
+      (define search-icon (new message% [parent hp2] [label (left-magnifying-glass-icon #:height 24)]))
+      (define search (new text-field%
+                          [parent hp2]
+                          [label #f]
+                          [callback  (lambda (field evt)
+                                       (notify 'search-change field (list current-note (send field get-value))))]))
+      (set! noteslist (new list-box% [parent vp1] [label ""] [choices '()][stretchable-height #t]))
+    
+      ;; right side of window
+      (set! title (new text-field% [parent vp2] [label (loc:title-label)]
+                       [callback (lambda (field evt) (notify 'title-change field (list current-note (send field get-value))))]))
+      (set! content (new text-field% [parent vp2] [label #f] [style '(multiple)]
+                         [callback (lambda (field evt) (notify 'content-change this (list current-note (send field get-value))))]))
+      (set! tags (new text-field% [parent vp2] [label (loc:tags-label)]
+                      [callback (lambda (field evt) (notify 'content-change this (list current-note (send field get-value))))])))
+    
+    (super-new
+     [label (loc:notes)]
+     [min-width 800]
+     [min-height 600])
+    
+    (init-display)
+    (create-status-line)))
+
+(define the-view (make-parameter (make-object view%)))
+(send (the-view) show #t)
+
+;; An application% instance holds the necessary metadata for an application.
+;(define notes-app
+;  (new gui-application%
+;     [name "Notes"]))

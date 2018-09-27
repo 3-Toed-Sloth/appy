@@ -1,0 +1,97 @@
+;; This file is a template for language de_DE
+;; Translate all the strings from the comment above the entries to the value in the key value list below it
+;; Leave the key untouched.
+
+;; Translation for: "The undo manager is closed. Use open-undo-system to initialize it."
+(appy-undo-manager-closed "Der Undo-Manager ist geschlossen. Verwenden Sie open-undo-system, um ihn zu initialisieren.")
+
+;; Translation for: "~a attempted to open a database twice."
+(appy-open-db-twice "~a hat versucht, eine Datenbank zweimal zu öffnen.")
+
+;; Translation for: "Continue"
+(appy-Continue "Weitermachen")
+
+;; Translation for: "Info"
+(appy-Info "Info")
+
+;; Translation for: "A command numeric id was registered twice - race condition? You may not use make-command concurrently. Command numeric=~s"
+(appy-command-numeric-twice "Eine Befehlsnummer wurde zweimal registriert - parallele Prozesse? Der make-command Befehl darf nicht in mehreren Threads gleichzeitig verwendet werden. Befehlsnummer=~s")
+
+;; Translation for: "~a is undergoing routine maintenance. Please do not interrupt this process."
+(appy-routine-maintenance-message "~a führt Wartungsarbeiten durch. Bitte unterbrechen Sie diesen Prozess nicht.")
+
+;; Translation for: "Maintenance for ~a has ended: ~a"
+(appy-maintenance-ended "Wartungsarbeiten für ~a beendet: ~a")
+
+;; Translation for: "Maintenance"
+(appy-Maintenance "Wartungsarbeiten")
+
+;; Translation for: "~a\n\nYou should Save & Quit now or may continue at your own risk."
+(appy-save-and-quit-message "~a\n\nEin Fehler ist aufgetreten. Sie sollten jetzt Speichern & Beenden oder können auf eigenes Risiko weitermachen.")
+
+;; Translation for: "The undo manager is already open."
+(appy-undo-manager-already-open "Der Undo-Manager wurde bereits geöffnet.")
+
+;; Translation for: "~a attempted to use a closed database."
+(appy-use-closed-db "~a hat versucht, eine geschlossene Datenbank zu verwenden.")
+
+;; Translation for: "Application"
+(appy-Application "Anwendung")
+
+;; Translation for: "[~a] ~a: ~a event number ~a has occurred. Please check the manual for more information. [~a ~a]"
+(appy-err-event "[~a] ~a: ~a Ereignis Nummer ~a ist aufgetreten. Bitte sehen Sie für zusätzliche Informationen in der Bedienungsanleitung nach. [~a ~a]")
+
+;; Translation for: "Starting to clean up preferences."
+(appy-start-clean-preferences "Beginne damit, die Einstellungen aufzuräumen.")
+
+;; Translation for: "About ~a"
+(appy-about-title "Über ~a")
+
+;; Translation for: "Done cleaning up preferences."
+(appy-end-clean-preferences "Fertig mit dem Aufräumen der Einstellungen.")
+
+;; Translation for: "An attempt to undo a command from a higher version of the undo manager has failed. Please update the application to the latest version to undo this action. Command numeric=~s"
+(appy-undo-version-err "Es wurde versucht, einen Befehl zu wiederrufen, der von einer höheren Version des Undo-Managers gespeichert wurde. Bitte aktualisieren Sie die Anwendung auf die neueste Version, um den Befehl zu wiederrufen. Befehlsnummer=~s")
+
+;; Translation for: "Unknown Error"
+(appy-unknown-error "Unbekannter Fehler")
+
+;; Translation for: "~a attempted to close a database twice."
+(appy-close-db-twice "~a hat versucht, eine Datenbank zweimal zu schließen.")
+
+;; Translation for: "Error"
+(appy-Error "Fehler")
+
+;; Translation for: "Save & Quit"
+(appy-Save-and-Quit "Speichern & Beenden")
+
+;; Translation for: "Empty data field for command. The undo database might be corrupted. Given: ~s"
+(appy-command-empty-data-field "Leeres Datenfeld in Befehl. Die Undo-Datenbank könnte fehlerhaft sein. Input: ~s")
+
+;; Translation for: "Debug"
+(appy-Debug "Fehlersuche")
+
+;; Translation for: "Warning"
+(appy-Warning "Warnung")
+
+;; Translation for: "Fatal"
+(appy-Fatal "Schwerer Fehler")
+
+;; Translation for: "Starting to clean up the undo system."
+(appy-start-clean-undo "Beginne damit, das Undo-System aufzuräumen.")
+
+;; Translation for: "Command target not found. The target link is stale. Given: ~s."
+(appy-command-target-not-found "Befehlsargument wurde nicht gefunden. Die Verknüpfung ist ungültig:  ~s.")
+
+;; Translation for: "Empty data in undo manager. The undo database might be corrupted."
+(appy-undo-empty-data "Leeres Datenfeld in der Undo-Verwaltung. Die Undo-Datenbank könnte fehlerhaft sein.")
+
+;; Translation for: "Module"
+(appy-Module "Komponente")
+
+;; Translation for: "Done cleaning up the undo system."
+(appy-done-clean-undo "Fertig mit dem Aufrämen des Undo-Systems.")
+
+;; Translation for: "~a is doing maintenance: ~a"
+(appy-maintenance-message "~a führt Wartungsarbeiten aus: ~a")
+

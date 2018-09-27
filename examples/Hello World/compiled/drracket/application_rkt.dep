@@ -1,0 +1,1 @@
+("7.0" ("dc147708bc89db98466a48154f9f019d514a2c6a" . "f7b000180db81ad995c1df61fc6016454e01bddc") #"/home/nemo/git/racket/appy/appy/examples/Hello World/../../gui.rkt" (collects #"racket" #"gui.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt"))
