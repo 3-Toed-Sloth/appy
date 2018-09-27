@@ -1,9 +1,9 @@
 
 # Appy: an Application Framework for Racket
 
-:tada: *Appy* is framework for writing GUI and commandline applications in [Racket](https://racket-lang.org/). It provides an object-oriented API for dealing with all kinds of mundane issues like preferences, storing data in simple key-value stores, internationalization, command and undo management, and easy deployment. While it is still in its early development stages, the long-term goal of this package is to make writing cross-platform end-user applications in Racket as seamless as possible.
+*Appy* is framework for writing GUI and commandline applications in [Racket](https://racket-lang.org/). It provides an object-oriented API for dealing with all kinds of mundane issues like preferences, storing data in simple key-value stores, internationalization, command and undo management, and easy deployment. While it is still in its early development stages, the long-term goal of this package is to make writing cross-platform end-user applications in Racket as seamless as possible.
 
-:construction: *Appy is currently in experimental status. Please try it out if you want, but be aware that the API will change.*
+:construction: *Note: Appy is currently in experimental status. Please try it out if you want, but be aware that the API will change.*
 
 ## Installation
 
@@ -13,7 +13,7 @@ The framework is not yet available on Racket's package server. To test it, you n
 
 Once the framework has been installed locally, `(require appy/gui)` will import all functionality. Importing by `(require "path/to/appy/gui")` should also work if you don't want to install it locally. If you only `(require appy)` the gui-related classes will not be imported.
 
-## Features
+## Features :tada:
 
 The main classes are `application%` and `gui-application%` for building command line and GUI applications respectively. *Appy*'s main features are:
 
