@@ -15,7 +15,7 @@ Once the framework has been installed locally, `(require appy/gui)` will import 
 
 ## Features :tada:
 
-The main classes are `application%` and `gui-application%` for building command line and GUI applications respectively. *Appy*'s main features are:
+*Appy*'s main features are:
 
 - Application metadata: The two main application classes `application%` and `gui-application%` manage the application name(s), version, localization, preferences, icons, exception handlers, and other issues. Once you have defined an instance of `gui-application%` or a subclass thereof, you can compile and package it automatically.
 
