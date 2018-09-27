@@ -1,11 +1,9 @@
 
 # Appy: an Application Framework for Racket
 
-## What is it?
+:tada: *Appy* is framework for writing GUI and commandline applications in [Racket](https://racket-lang.org/). It provides an object-oriented API for dealing with all kinds of mundane issues like preferences, storing data in simple key-value stores, internationalization, command and undo management, and easy deployment. While it is still in its early development stages, the long-term goal of this package is to make writing cross-platform end-user applications in Racket as seamless as possible.
 
-*Appy* is framework for writing GUI and commandline applications in [Racket](https://racket-lang.org/). It provides an object-oriented API for dealing with all kinds of mundane issues like preferences, storing data in simple key-value stores, internationalization, command and undo management, and easy deployment. While it is still in its early development stages, the long-term goal of this package is to make writing cross-platform end-user applications in Racket as seamless as possible.
-
-*Note: Appy is currently in experimental status. Please try it out if you want, but be aware that the API will change.*
+:construction: *Appy is currently in experimental status. Please try it out if you want, but be aware that the API will change.*
 
 ## Installation
 
